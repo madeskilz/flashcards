@@ -1,5 +1,5 @@
 ## Author
-- [Adekoniye Adedoyin](https://github.com/madeskilz)
+[Adekoniye Adedoyin](https://github.com/madeskilz)
 
 # Mobile Flashcards React Native Project
 This project is one of the series of projects by Udacity to help solidify my trainings, this is also the final project.
