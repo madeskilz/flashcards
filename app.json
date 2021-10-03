@@ -1,11 +1,22 @@
 {
   "expo": {
-    "name": "flashcards",
+    "orientation": "portrait",
+    "name": "DYS Flashcards",
+    "description": "Memory book for higher test performance.",
     "slug": "flashcards",
     "version": "1.0.0",
+    "icon": "https://maxcdn.icons8.com/Color/PNG/512/Sports/triathlon-512.png",
+    "notification": {
+      "icon": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Basketball.png"
+    },
+    "ios": {
+      "bundleIdentifier": "com.doyinsoft.flashcards"
+    },
+    "android": {
+      "package": "com.doyinsoft.flashcards"
+    },
     "assetBundlePatterns": [
       "**/*"
     ]
-  },
-  "name": "flashcards"
+  }
 }
