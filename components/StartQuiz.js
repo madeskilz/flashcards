@@ -12,10 +12,8 @@ class StartQuiz extends Component {
     flipCard = () => {
         if (this.state.face === 'front') {
             this.setState({ face: 'back' });
-            console.log("animated Flip go back");
         } else {
             this.setState({ face: 'front' });
-            console.log("animated Flip back to front");
         }
     }
     next = (type) => {
@@ -54,7 +52,7 @@ class StartQuiz extends Component {
         })
     }
     render() {
-        const { questions } = this.props.deck;
+        const { deck: { questions }, navigation } = this.props;
         const { current, face, completed, correct } = this.state;
         return (
             <View style={styles.container}>
@@ -82,7 +80,21 @@ class StartQuiz extends Component {
                 </Fragment>}
                 {completed && (
                     <View>
-                        <Text style={styles.title}>Congratulations!!!</Text><Text style={styles.title}> You answered {correct} questions correctly out of {questions.length}</Text>
+                        <Text style={styles.title}>Congratulations!!!</Text>
+                        <Text style={styles.title}> You answered {correct} questions correctly out of {questions.length}</Text>
+                        <TouchableOpacity style={styles.btn} onPress={() => navigation.goBack()}>
+                            <Text style={{ color: '#02351a', textAlign: 'center', fontSize: 20 }}>Go to Deck</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={[styles.btn, { backgroundColor: '#02351a', }]} onPress={() => {
+                            this.setState({
+                                current: 0,
+                                correct: 0,
+                                face: 'front',
+                                completed: false,
+                            })
+                        }}>
+                            <Text style={{ color: '#fff', textAlign: 'center', fontSize: 20 }}>Restart Quiz</Text>
+                        </TouchableOpacity>
                     </View>
                 )}
             </View>
